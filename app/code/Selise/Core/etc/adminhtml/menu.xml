@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * This source file is subject to the selise.ch for short period of time
+ *
+ * @category  Core Function
+ * @package   Selise_Core
+ * @copyright Copyright (c) Selise (https://selise.ch) for short period of time
+ * @author    Suvankar Paul <shuvoenr@gmail.com>
+ *
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Selise_Core::core" title="Selise" translate="title" module="Selise_Core" resource="Selise_Core::core" sortOrder="50"/>
+        <add id="Selise_Core::documentation" title="Documentation" translate="title" module="Selise_Core" resource="Selise_Core::documentation" parent="Selise_Core::core" action="adminhtml/system_config/edit/section/selise_documentation" sortOrder="1000"/>
+    </menu>
+</config>
