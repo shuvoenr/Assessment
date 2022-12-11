@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * This source file is subject to the selise.ch for short period of time
+ *
+ * @category  Blog/News/Magazine
+ * @package   Selise_Magazine
+ * @copyright Copyright (c) Selise (https://selise.ch) for short period of time
+ * @author    Suvankar Paul <shuvoenr@gmail.com>
+ *
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="selise_magazine_post" engine="innodb" comment="Magazine Post">
+        <column name="post_id" xsi:type="int" padding="10" unsigned="true" nullable="false" identity="true" comment="Id"/>
+        <column name="post_title" xsi:type="varchar" nullable="false" length="255" comment="Post Title"/>
+        <column name="post_url" xsi:type="varchar" nullable="false" length="255" comment="Post URL"/>
+        <column name="post_content" xsi:type="text" nullable="false" comment="Post Content"/>
+        <column name="category_id" xsi:type="int" unsigned="true" comment="Category Id"/>
+        <column name="meta_title" xsi:type="varchar" nullable="false" length="255" comment="Post Meta Title"/>
+        <column name="meta_content" xsi:type="varchar" nullable="false" length="512" comment="Post Meta Content"/>
+        <column name="post_order" xsi:type="int" nullable="false" default="0" comment="Post Order"/>
+        <column name="featured_img" xsi:type="varchar" nullable="false" length="512" comment="Featured Image"/>
+        <column name="is_publish" xsi:type="smallint" unsigned="false" nullable="false" default="0" comment="Is Published"/>
+        <column name="is_active" xsi:type="smallint" unsigned="false" nullable="false" default="0" comment="Is Active"/>
+        <column name="published_at" xsi:type="timestamp" nullable="false" comment="Published At"/>
+        <column name="created_at" xsi:type="timestamp" on_update="false" nullable="false" default="CURRENT_TIMESTAMP" comment="Created At"/>
+        <column name="updated_at" xsi:type="timestamp" on_update="true" nullable="false" default="CURRENT_TIMESTAMP" comment="Updated At"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="post_id"/>
+        </constraint>
+    </table>
+    <table name="selise_magazine_category" engine="innodb" comment="Magazine Category">
+        <column name="category_id" xsi:type="int" unsigned="true" nullable="false" identity="true" comment="Category Id"/>
+        <column name="category_name" xsi:type="varchar" nullable="false" length="255" comment="Category Name"/>
+        <column name="category_url" xsi:type="varchar" nullable="false" length="255" comment="Category URL"/>
+        <column name="meta_title" xsi:type="varchar" nullable="false" length="255" comment="Category Meta Title"/>
+        <column name="meta_content" xsi:type="varchar" nullable="false" length="512" comment="Category Meta Content"/>
+        <column name="parent_id" xsi:type="int" unsigned="true" nullable="false" default="1" comment="Parent Id"/>
+        <column name="is_active" xsi:type="smallint" unsigned="false" nullable="false" default="0" comment="Is Active"/>
+        <column name="created_at" xsi:type="timestamp" on_update="false" nullable="false" default="CURRENT_TIMESTAMP" comment="Created At"/>
+        <column name="updated_at" xsi:type="timestamp" on_update="true" nullable="false" default="CURRENT_TIMESTAMP" comment="Updated At"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="category_id"/>
+        </constraint>
+    </table>
+</schema>

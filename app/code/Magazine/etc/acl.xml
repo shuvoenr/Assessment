@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * This source file is subject to the selise.ch for short period of time
+ *
+ * @category  Blog/News/Magazine
+ * @package   Selise_Magazine
+ * @copyright Copyright (c) Selise (https://selise.ch) for short period of time
+ * @author    Suvankar Paul <shuvoenr@gmail.com>
+ *
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Selise_Core::core">
+                    <resource id="Selise_Magazine::magazine" title="Selise Magazine" translate="title" sortOrder="700">
+                        <resource id="Selise_Magazine::post" title="Magazine Post" translate="title">
+                            <resource id="Selise_Magazine::post_save" title="Magazine Post Save" translate="title"/>
+                            <resource id="Selise_Magazine::post_delete" title="Magazine Post Delete" translate="title"/>
+                        </resource>
+                        <resource id="Selise_Magazine::category" title="Magazine Category" translate="title">
+                            <resource id="Selise_Magazine::category_save" title="Magazine Category Save" translate="title"/>
+                            <resource id="Selise_Magazine::category_delete" title="Magazine Category Delete" translate="title"/>
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

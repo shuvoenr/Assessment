@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">selise_magazine_category_form.selise_magazine_category_data_source</item>
+        </item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+    </argument>
+    <settings>
+        <buttons>
+            <button name="back" class="Selise\Core\Block\Adminhtml\Edit\Button\Back"/>
+            <button name="save" class="Selise\Core\Block\Adminhtml\Edit\Button\Save"/>
+        </buttons>
+        <namespace>selise_magazine_category_form</namespace>
+        <dataScope>data</dataScope>
+        <deps>
+            <dep>selise_magazine_category_form.selise_magazine_category_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="selise_magazine_category_data_source">
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+        <settings>
+            <submitUrl path="*/*/save"/>
+        </settings>
+        <dataProvider class="Selise\Magazine\Ui\DataProvider\Category" name="selise_magazine_category_data_source">
+            <settings>
+                <requestFieldName>category_id</requestFieldName>
+                <primaryFieldName>category_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <fieldset name="general">
+        <settings>
+            <label>General</label>
+        </settings>
+        <field name="category_id" formElement="hidden"/>
+        <field name="category_name" formElement="input">
+            <settings>
+                <label translate="true">Category Name</label>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+            </settings>
+        </field>
+        <field name="category_url" formElement="input">
+            <settings>
+                <label translate="true">Category URL</label>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+            </settings>
+        </field>
+        <field name="is_active" formElement="select">
+            <settings>
+                <label translate="true">Is Active?</label>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+            </settings>
+            <formElements>
+                <select>
+                    <settings>
+                        <options class="Magento\Config\Model\Config\Source\Yesno"/>
+                    </settings>
+                </select>
+            </formElements>
+        </field>
+    </fieldset>
+    <fieldset name="seo">
+        <settings>
+            <label>Search Engine Optimization</label>
+        </settings>
+        <field name="meta_title" formElement="input">
+            <settings>
+                <label translate="true">Meta Title</label>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+            </settings>
+        </field>
+        <field name="meta_content" formElement="input">
+            <settings>
+                <label translate="true">Meta Content</label>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+            </settings>
+        </field>
+    </fieldset>
+</form>

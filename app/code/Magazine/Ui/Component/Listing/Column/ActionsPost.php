@@ -1,0 +1,81 @@
+<?php
+/**
+ * This source file is subject to the selise.ch for short period of time
+ *
+ * @category  Blog/News/Magazine
+ * @package   Selise_Magazine
+ * @copyright Copyright (c) Selise (https://selise.ch) for short period of time
+ * @author    Suvankar Paul <shuvoenr@gmail.com>
+ *
+ */
+declare(strict_types=1);
+
+namespace Selise\Magazine\Ui\Component\Listing\Column;
+
+use Magento\Framework\UrlInterface;
+use Magento\Framework\View\Element\UiComponent\ContextInterface;
+use Magento\Framework\View\Element\UiComponentFactory;
+use Magento\Ui\Component\Listing\Columns\Column;
+
+class ActionsPost extends Column
+{
+    /**
+     * @param ContextInterface $context
+     * @param UiComponentFactory $uiComponentFactory
+     * @param UrlInterface $urlBuilder
+     * @param array $components
+     * @param array $data
+     */
+    public function __construct(
+        ContextInterface $context,
+        UiComponentFactory $uiComponentFactory,
+        private readonly UrlInterface $urlBuilder,
+        array $components = [],
+        array $data = []
+    ) {
+        parent::__construct(
+            $context,
+            $uiComponentFactory,
+            $components,
+            $data
+        );
+    }
+
+    /**
+     * @param array $dataSource
+     * @return array
+     */
+    public function prepareDataSource(array $dataSource): array
+    {
+        if (!isset($dataSource['data']['items'])) {
+            return $dataSource;
+        }
+
+        foreach ($dataSource['data']['items'] as & $item) {
+            if (!isset($item['post_id'])) {
+                continue;
+            }
+
+            $item[$this->getData('name')] = [
+                'edit' => [
+                    'href' => $this->urlBuilder->getUrl('magazine/post/edit', [
+                        'post_id' => $item['post_id'],
+                    ]),
+                    'label' => __('Edit'),
+                ],
+                'delete' => [
+                    'href' => $this->urlBuilder->getUrl('magazine/post/delete', [
+                        'post_id' => $item['post_id'],
+                    ]),
+                    'label' => __('Delete'),
+                    'confirm' => [
+                        'title' => __('Delete %1', $item['post_title']),
+                        'message' => __('Are you sure you want to delete the "%1" record?', $item['post_title']),
+                    ],
+                ],
+            ];
+        }
+
+        return $dataSource;
+    }
+}

@@ -1,0 +1,35 @@
+{
+    "selise_magazine_post": {
+        "column": {
+            "post_id": true,
+            "post_title": true,
+            "post_content": true,
+            "category_id": true,
+            "meta_title": true,
+            "meta_content": true,
+            "post_order": true,
+            "featured_img": true,
+            "is_publish": true,
+            "is_active": true,
+            "published_at": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "selise_magazine_category": {
+        "column": {
+            "category_id": true,
+            "category_name": true,
+            "parent_id": true,
+            "is_active": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

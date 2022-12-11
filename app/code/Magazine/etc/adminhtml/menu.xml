@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * This source file is subject to the selise.ch for short period of time
+ *
+ * @category  Blog/News/Magazine
+ * @package   Selise_Magazine
+ * @copyright Copyright (c) Selise (https://selise.ch) for short period of time
+ * @author    Suvankar Paul <shuvoenr@gmail.com>
+ *
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Selise_Magazine::magazine" title="Magazine" module="Selise_Magazine" sortOrder="600" parent="Selise_Core::core"         resource="Selise_Magazine::magazine"/>
+        <add id="Selise_Magazine::post"     title="Post"     module="Selise_Magazine" sortOrder="10"  parent="Selise_Magazine::magazine" resource="Selise_Magazine::post"     action="magazine/post/index" />
+        <add id="Selise_Magazine::category" title="Category" module="Selise_Magazine" sortOrder="20"  parent="Selise_Magazine::magazine" resource="Selise_Magazine::category" action="magazine/category/index" />
+    </menu>
+</config>
