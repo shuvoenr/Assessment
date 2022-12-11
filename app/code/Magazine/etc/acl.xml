@@ -20,6 +20,7 @@
                         <resource id="Selise_Magazine::post" title="Magazine Post" translate="title">
                             <resource id="Selise_Magazine::post_save" title="Magazine Post Save" translate="title"/>
                             <resource id="Selise_Magazine::post_delete" title="Magazine Post Delete" translate="title"/>
+                            <resource id="Selise_Magazine::post_api" title="Magazine Post Api" translate="title"/>
                         </resource>
                         <resource id="Selise_Magazine::category" title="Magazine Category" translate="title">
                             <resource id="Selise_Magazine::category_save" title="Magazine Category Save" translate="title"/>

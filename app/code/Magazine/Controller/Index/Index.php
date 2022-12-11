@@ -4,7 +4,7 @@
  *
  * @category  Blog/News/Magazine
  * @package   Selise_Magazine
- * @copyright Copyright (c) Selise (https://selise.ch) for short period of time
+ * @copyright Copyright (c) Selise (https://selise.ch)
  * @author    Suvankar Paul <shuvoenr@gmail.com>
  *
  */

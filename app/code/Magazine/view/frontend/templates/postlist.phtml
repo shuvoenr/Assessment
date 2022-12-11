@@ -1,0 +1,35 @@
+<?php
+/**
+ * @var $block Selise\Magazine\Block\PostList
+ * */
+
+$postCollection = $block->getPostCollection();
+$posts = $postCollection['posts'] ?? [];
+?>
+<div>
+    <div class="grid">
+        <?php $counter = 0;?>
+        <?php foreach ($posts as $post): ?>
+            <div class="items">
+                <div class="post-heading"><h2><?= $post['post_title']; ?></h2></div>
+                <div class="post-content">
+                    <?= $post['meta_content']; ?>
+                </div>
+            </div>
+        <?php endforeach;?>
+    </div>
+</div>
+
+<style>
+    .grid {
+        display: grid;
+        grid-column-gap: 35px;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+    .grid .items{
+        padding: 20px;
+        box-shadow: 0 0 5px 0 #e8e8e8;
+        -moz-box-shadow: 0 0 5px 0 #e8e8e8;
+        -webkit-box-shadow: 0 0 5px 0 #e8e8e8;
+    }
+</style>

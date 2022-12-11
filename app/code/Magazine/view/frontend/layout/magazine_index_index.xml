@@ -1,0 +1,21 @@
+<!--
+/**
+ * This source file is subject to the selise.ch for short period of time
+ *
+ * @category  Magazine
+ * @package   Selise_Magazine
+ * @copyright Copyright (c) Selise (https://selise.ch) for short period of time
+ * @author    Suvankar Paul <shuvoenr@gmail.com>
+ *
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>Magazine</title>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Selise\Magazine\Block\PostList" name="selise.magazine.postlist" template="Selise_Magazine::postlist.phtml" />
+        </referenceContainer>
+    </body>
+</page>
