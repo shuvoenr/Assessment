@@ -57,3 +57,8 @@
 > I don't get time to do this. But this can be done two way if you want to do that for all product listing then copy the product list file from parent then and add a static text before where pricing is showing.
 
 > But if you want manage those text a static block can get added.
+
+
+# Last thing how to install :
+
+> Just copy the code and add in you app directory.
