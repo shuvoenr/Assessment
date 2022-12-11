@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * This source file is subject to the selise.ch for short period of time
+ *
+ * @category  Theme
+ * @package   Selise_Magazine
+ * @copyright Copyright (c) Selise (https://selise.ch) for short period of time
+ * @author    Suvankar Paul <shuvoenr@gmail.com>
+ *
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<body>
+    <referenceContainer name="content">
+        <block class="Magento\Cms\Block\Block" name="block_identifier" before="-">
+            <arguments>
+                <argument name="block_id" xsi:type="string">home_page_banner</argument>
+            </arguments>
+        </block>
+    </referenceContainer>
+</body>
+</page>
